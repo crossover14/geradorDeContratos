@@ -13,7 +13,7 @@ namespace Exerc_Enum
             string deptName = Console.ReadLine();
             
             
-            Console.Write("Enter worker data: ");
+            Console.WriteLine("Enter worker data: ");
            
             
             Console.Write("Name: ");
@@ -24,7 +24,7 @@ namespace Exerc_Enum
             //Conversão de ENUM para string
             WorkLevel level = Enum.Parse<WorkLevel>(Console.ReadLine());
 
-            Console.WriteLine("Base Salary: ");
+            Console.Write("Base Salary: ");
             double baseSalary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             Departament dept = new Departament(deptName);
@@ -36,7 +36,7 @@ namespace Exerc_Enum
 
             for (int i = 1; i <= n; i++)
             {
-                Console.Write($"Enter #{i}  contrat data: ");
+                Console.WriteLine($"Enter #{i}  contrat data: ");
                 Console.Write( "Date (DD/MM/YYYY): ");
                 DateTime date = DateTime.Parse(Console.ReadLine());
                 Console.Write("Value per hour: ");
@@ -58,6 +58,8 @@ namespace Exerc_Enum
             Console.WriteLine("Name " + worker.Name);
             //Navegue Usando operador ". (PONTO)"
             Console.WriteLine("Departament: " + worker.Departament.Name);
+
+            Console.WriteLine("Icome for " + monthAndYEar + ": " + worker.Icome(year, month).ToString("F2"), CultureInfo.InvariantCulture);
 
         }
     }

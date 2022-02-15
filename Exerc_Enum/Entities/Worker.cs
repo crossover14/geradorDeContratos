@@ -29,6 +29,30 @@ namespace Exerc_Enum.Entities
         }
         //contrutores Nao incluir associaçoes para muitos "Contrato" nao add LIST<> ela sempre começa vazia VIA DE REGRA
 
+        //MetodoAdd
+        public void AddContract(HourContratact contratact)
+        {
+            Contrats.Add(contratact);
+        }
+        
+        //MetodoRemove
+        public void RemoveContract(HourContratact contratact)
+        {
+            Contrats.Remove(contratact);
+        }
+
+       public double Icome(int year, int month)
+        {
+            double sum = BaseSalary;
+            foreach (HourContratact contratact in Contrats)
+            {
+                if (contratact.Date.Year == year && contratact.Date.Month == month)
+                {
+                    sum += contratact.TotalValue();
+                }
+            }
+            return sum;
+        }
 
     }
 }

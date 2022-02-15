@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
 namespace Exerc_Enum.Entities.Enums
 {
+    //Enumeradores
     enum WorkLevel : int
     {
-      Junior = 1,
-      MidLevel = 2,
-      Senior = 3
+      Junior = 0,
+      MidLevel = 1,
+      Senior = 2
     }
 }
