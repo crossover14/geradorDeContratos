@@ -31,16 +31,33 @@ namespace Exerc_Enum
             Worker worker = new Worker(name, level, baseSalary, dept);
 
 
-            Console.WriteLine("How many contract to this worker? ");
+            Console.Write("How many contract to this worker? ");
             int n = int.Parse(Console.ReadLine());
 
             for (int i = 1; i <= n; i++)
             {
-                Console.WriteLine($"Enter #{i}  contrat data: ");
-                Console.WriteLine( "Date (DD/MM/YYYY): ");
-                Console.WriteLine("Value per hour: ");
-                Console.WriteLine("Duration (hour): ");
+                Console.Write($"Enter #{i}  contrat data: ");
+                Console.Write( "Date (DD/MM/YYYY): ");
+                DateTime date = DateTime.Parse(Console.ReadLine());
+                Console.Write("Value per hour: ");
+                double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.Write("Duration (hour): ");
+                int hours = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                HourContratact contratact = new HourContratact(date, valuePerHour, hours);
+
+                worker.AddContract(contratact);
+
             }
+
+            Console.WriteLine("");
+            Console.Write("Enter month and year to calculate income (MM/YYYY): ");
+            string monthAndYEar = Console.ReadLine();
+            int month = int.Parse(monthAndYEar.Substring(0, 2));
+            int year = int.Parse(monthAndYEar.Substring(3));
+            Console.WriteLine("Name " + worker.Name);
+            //Navegue Usando operador ". (PONTO)"
+            Console.WriteLine("Departament: " + worker.Departament.Name);
 
         }
     }
