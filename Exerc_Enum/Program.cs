@@ -28,7 +28,7 @@ namespace Exerc_Enum
             double baseSalary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             Departament dept = new Departament(deptName);
-            Worker worker = new Worker(name, level, baseSalary, dept);
+            Worker worker = new Worker(name, level, baseSalary, dep);
            
 
 
