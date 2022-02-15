@@ -1,7 +1,5 @@
 ﻿using Exerc_Enum.Entities.Enums;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Exerc_Enum.Entities
 {
@@ -10,13 +8,26 @@ namespace Exerc_Enum.Entities
         public string Name { get; set; }
         public WorkLevel Level { get; set; }
         public double BaseSalary { get; set; }
+        public Departament Departament { get; set; }
 
-        public Worker(string name, WorkLevel level, double baseSalary)
+        //Importar uma do HourContrat por ser uma lista usa o termo "List<>"
+        public List<HourContratact> Contrats { get; set; } = new List<HourContratact>();
+        
+
+        //construtores
+        public Worker()
+        {
+          
+        }
+
+        public Worker(string name, WorkLevel level, double baseSalary, Departament departament)
         {
             Name = name;
             Level = level;
             BaseSalary = baseSalary;
+            Departament = departament;
         }
+        //contrutores Nao incluir associaçoes para muitos "Contrato" nao add LIST<> ela sempre começa vazia VIA DE REGRA
 
 
     }
