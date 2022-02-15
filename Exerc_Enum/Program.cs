@@ -28,10 +28,19 @@ namespace Exerc_Enum
             double baseSalary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             Departament dept = new Departament(deptName);
-            Worker worker = new Worker(name, level, baseSalary, dep);
-           
+            Worker worker = new Worker(name, level, baseSalary, dept);
 
 
+            Console.WriteLine("How many contract to this worker? ");
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"Enter #{i}  contrat data: ");
+                Console.WriteLine( "Date (DD/MM/YYYY): ");
+                Console.WriteLine("Value per hour: ");
+                Console.WriteLine("Duration (hour): ");
+            }
 
         }
     }
